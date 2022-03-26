@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="row">
+      <label for="url">url:</label>
+      <input type="url" id="url" placeholder="Enter target url" name="url">
+      <label for="executeOnStartup">execute at startup:</label>
+      <input type="checkbox" id="executeOnStartup" name="executeOnStartup">
+      <label for="onceADay">only once a day:</label>
+      <input type="checkbox" id="onceADay" name="onceADay">
+    </div>
+    <div class="row">
+      <label for="subTargetName">submit target name:</label>
+      <input type="text" id="subTargetName" placeholder="Enter submit target name" name="subTargetName">
+      <label for="autoSubmit">auto submit:</label>
+      <input type="checkbox" id="autoSubmit" name="autoSubmit">
+    </div>
+    <div id="formDiv">
+    </div>
+    <div class="row">
+      <button id="addItem">+ Add a new item</button>
+    </div>
+    <div class="row">
+      <button id="savePreset">Save</button>
+    </div>
+  </body>
+  <script src="options.js"></script>
+</html>
