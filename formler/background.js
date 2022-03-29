@@ -14,10 +14,13 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.runtime.onStartup.addListener(() => {
   chrome.storage.sync.get("urlValue", function(result) {
     if (result.urlValue != "") {
-      chrome.tabs.create({
-        url: result.urlValue
+      chrome.storage.sync.get("executeOnStartup", function(result1) {
+        if (result1.executeOnStartup) {
+          chrome.tabs.create({
+            url: result.urlValue
+          });
+        };
       });
     };
   });
 });
-  

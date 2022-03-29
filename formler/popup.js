@@ -1,9 +1,6 @@
 // Initialize button
  let executeBtn = document.getElementById("execute");
-
-// chrome.storage.sync.get("color", ({ color }) => {
-//   changeColor.style.backgroundColor = color;
-// });
+//  let openFill = document.getElementById("openAndFill");
 
 // When the button is clicked, inject fillForm() into current page
 executeBtn.addEventListener("click", async () => {
@@ -15,9 +12,15 @@ executeBtn.addEventListener("click", async () => {
   });
 });
 
+// openFill.addEventListener("click",  () => {
+  
+// });
+
 // The body of this function will be execuetd as a content script inside the
 // current page
 function fillForm() {
+  
+
   chrome.storage.sync.get("dynamicIdList", ({ dynamicIdList }) => {
     chrome.storage.sync.get("dynamicValueList", ({ dynamicValueList}) => {
       for (let i = 0; i < dynamicIdList.length; i++) {
@@ -46,6 +49,7 @@ function fillForm() {
             // console.log(document.getElementsByName("submit"));
         })
       })
+      // chrome.tabs.remove(tab.id);
     });
   });
 }
